@@ -1,15 +1,9 @@
 var cron = require("cron");
 var request = require("request");
 
-var normalize = function (str) {
-	return str.toLowerCase().replace(/\d+/g, function (sub) {
-		return parseInt(sub, 10);
-	}).replace(/\w+/g, function (sub) {
-		return sub[0].toUpperCase() + sub.slice(1);
-	});
-};
+var util = require("./util");
 
-var refresh = function () {
+module.exports = function () {
 	request.get("http://data.sfgov.org/resource/rqzj-sfat.json", function (err, res, txt) {
 		if (err) {
 			return console.log("cron: http request failed with", err);
@@ -31,7 +25,7 @@ var refresh = function () {
 		}).map(function (v) {
 			data.types[v.facilitytype] = true;
 			
-			var labels = normalize(v.fooditems).match(/\b[\w\s]+\b/g);
+			var labels = util.normalize(v.fooditems).match(/\b[\w\s]+\b/g);
 			
 			labels.forEach(function (v) {
 				data.labels[v] = (data.labels[v] || 0) + 1;
@@ -39,19 +33,20 @@ var refresh = function () {
 			
 			return {
 				name: v.applicant,
-				address: v.address ? normalize(v.address) : normalize(v.locationdescription),
-				latlon: [v.latitude, v.longitude],
+				type: v.facilitytype,
 				labels: labels,
+				address: v.address ? util.normalize(v.address) : util.normalize(v.locationdescription),
+				latlon: [v.latitude, v.longitude],
 				schedule: v.schedule
 			};
 		});
 		
 		data.types = Object.keys(data.types);
 		
-		global.Data = data;
+		global.Vendors = data;
+		
+		console.log("cron: successfully processed", data.list.length, "vendors");
 	});
 };
 
-new cron.CronJob('00 00 00 * * *', refresh, null, true);
-
-refresh();
+new cron.CronJob("00 00 00 * * *", module.exports, null, true);
