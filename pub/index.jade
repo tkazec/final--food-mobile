@@ -3,24 +3,25 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title All aboard the food-mobile
+		title Food-mobile!
 		style !{css}
 	body
 		div#top
 			div#top-left
-				div.top-col.top-col-m: input(type="text", placeholder="everything")
+				div.top-col.top-col-m: input#top-text(type="text", placeholder="everything")
 				div.top-col.top-col-l Find
-				div.top-col.top-col-r: select
+				div.top-col.top-col-r: select#top-type
 					option(value="") any type
 					each t in types
 						option(value=t) #{t}
+			
 			div#top-right
-				div.top-col.top-col-m: input(type="text", placeholder="current location")
+				div.top-col.top-col-m: input#top-address(type="text", placeholder="current location")
 				div.top-col.top-col-l Near
-				div.top-col.top-col-r
-					button walk
-					button bike
-					button drive
+				div.top-col.top-col-r#top-distance
+					button(data-distance="0.5") walk
+					button(data-distance="1.5") bike
+					button(data-distance="4.5", disabled) drive
 		
 		div#map
 			div#map-inner
@@ -35,4 +36,4 @@ html(lang="en")
 			ga('send', 'pageview');
 		script(src="http://maps.google.com/maps/api/js?sensor=true")
 		script(src="http://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.5/gmaps.min.js")
-		script !{js}
+		script var labels = !{JSON.stringify(labels)}; !{js}
