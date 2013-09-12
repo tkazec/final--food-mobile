@@ -58,18 +58,18 @@ Data.show = function () {
 		}());
 		
 		info.appendChild(function () {
+			var elem = document.createElement("address");
+			elem.textContent = v.address;
+			return elem;
+		}());
+		
+		info.appendChild(function () {
 			var elem = document.createElement("div");
 			[v.type].concat(v.labels).forEach(function (l) {
 				var span = document.createElement("span");
 				span.textContent = l;
 				elem.appendChild(span);
 			});
-			return elem;
-		}());
-		
-		info.appendChild(function () {
-			var elem = document.createElement("address");
-			elem.textContent = v.address;
 			return elem;
 		}());
 		

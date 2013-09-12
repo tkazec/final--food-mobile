@@ -57,6 +57,53 @@ body {
 	margin-left: -200px;
 }
 
+.map-info {
+	color: #333;
+	width: 240px;
+}
+
+.map-info > h1 {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 16px;
+	margin: 0 0 5px 0;
+}
+
+.map-info > address {
+	font-size: 14px;
+	font-style: italic;
+	line-height: 14px;
+	margin: 10px 0;
+}
+
+.map-info > div {
+	text-align: justify;
+}
+.map-info > div > span {
+	background: #999;
+	border-radius: 3px;
+	color: #FFF;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 12px;
+	margin: 1px;
+	padding: 3px;
+}
+
+.map-info > a {
+	color: #0060FF;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 14px;
+	margin-top: 10px;
+	text-align: center;
+	text-decoration: none;
+	width: 50%;
+}
+.map-info > a:hover {
+	color: #0000FF;
+}
+
 
 /*****************************************************************************/
 /* Contents
@@ -81,8 +128,12 @@ body {
 #top-right button {
 	background: #FFF;
 	border: 0;
+	cursor: pointer;
 	height: 38px;
 	width: 66px;
+}
+#top-right button:hover {
+	background: #EEE;
 }
 #top-right button:disabled {
 	background: #DDD;
