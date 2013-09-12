@@ -1,0 +1,69 @@
+body {
+	margin: 0;
+}
+
+button {
+	background: #EEE;
+	border: 1px solid;
+	width: 80px;
+}
+
+input {
+	border: 0;
+	border-bottom: 1px dotted;
+	padding: 0;
+	width: 160px;
+}
+input:focus {
+	border-bottom: 1px solid;
+	outline: 0;
+}
+
+button,
+input,
+select {
+	border-color: #333;
+	box-sizing: border-box;
+	font-size: 20px;
+	height: 40px;
+	margin: 0 20px;
+	vertical-align: top;
+}
+
+button + button,
+input + button,
+input + select {
+	margin-left: 0;
+}
+
+#top,
+button,
+input,
+select {
+	color: #333;
+	font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
+#top {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.333);
+	font-size: 30px;
+	line-height: 40px;
+	padding: 20px;
+	position: fixed;
+	height: 40px;
+	width: 100%;
+	z-index: 1;
+}
+
+#map {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 80px;
+}
+
+#map-inner {
+	height: 100%;
+}

@@ -1,5 +1,5 @@
 console.info("main: booting up");
 
-global.Vendors = [];
+global.Vendors = { types: [], labels: [], list: [] };
 require("./lib/cron")();
 require("./lib/serv")();
