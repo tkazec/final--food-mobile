@@ -65,11 +65,19 @@ Data.show = function () {
 		
 		info.appendChild(function () {
 			var elem = document.createElement("ul");
-			[v.type].concat(v.labels).forEach(function (l) {
+			
+			var li = document.createElement("li");
+			li.textContent = v.type;
+			elem.appendChild(li);
+			
+			v.labels.sort(function (a, b) {
+				return Labels[b].count - Labels[a].count;
+			}).forEach(function (l) {
 				var li = document.createElement("li");
-				li.textContent = l;
+				li.textContent = Labels[l].title;
 				elem.appendChild(li);
 			});
+			
 			return elem;
 		}());
 		
