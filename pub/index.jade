@@ -2,21 +2,25 @@ doctype
 html(lang="en")
 	head
 		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title All aboard the food-mobile
 		style !{css}
 	body
 		div#top
-			| Find
-			input(type="text", placeholder="everything")
-			select
-				option(value="") any type
-				each t in types
-					option(value=t) #{t}
-			| near
-			input(type="text", placeholder="current location")
-			button walk
-			button bike
-			button drive
+			div#top-left
+				div.top-col.top-col-m: input(type="text", placeholder="everything")
+				div.top-col.top-col-l Find
+				div.top-col.top-col-r: select
+					option(value="") any type
+					each t in types
+						option(value=t) #{t}
+			div#top-right
+				div.top-col.top-col-m: input(type="text", placeholder="current location")
+				div.top-col.top-col-l Near
+				div.top-col.top-col-r
+					button walk
+					button bike
+					button drive
 		
 		div#map
 			div#map-inner

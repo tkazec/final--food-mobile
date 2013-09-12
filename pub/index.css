@@ -1,59 +1,91 @@
+/*****************************************************************************/
+/* Elements
+/*****************************************************************************/
 body {
 	margin: 0;
 }
 
-button {
-	background: #EEE;
-	border: 1px solid;
-	width: 80px;
-}
-
-input {
+#top input {
 	border: 0;
 	border-bottom: 1px dotted;
 	padding: 0;
-	width: 160px;
+	width: 100%;
 }
-input:focus {
+#top input:focus {
 	border-bottom: 1px solid;
 	outline: 0;
 }
 
-button,
-input,
-select {
+#top button,
+#top input,
+#top select {
 	border-color: #333;
 	box-sizing: border-box;
 	font-size: 20px;
 	height: 40px;
-	margin: 0 20px;
 	vertical-align: top;
 }
 
-button + button,
-input + button,
-input + select {
-	margin-left: 0;
-}
-
 #top,
-button,
-input,
-select {
+#top button,
+#top input,
+#top select {
 	color: #333;
 	font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 }
 
+
+/*****************************************************************************/
+/* Classes
+/*****************************************************************************/
+.top-col {
+	float: left;
+}
+
+.top-col-l {
+	margin-left: -100%;
+}
+
+.top-col-m {
+	box-sizing: border-box;
+	padding: 0 220px 0 80px;
+	width: 100%;
+}
+
+.top-col-r {
+	margin-left: -200px;
+}
+
+
+/*****************************************************************************/
+/* Contents
+/*****************************************************************************/
 #top {
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.333);
 	font-size: 30px;
 	line-height: 40px;
-	padding: 20px;
 	position: fixed;
-	height: 40px;
 	width: 100%;
 	z-index: 1;
+}
+
+#top-left select {
+	width: 200px;
+}
+
+#top-right .top-col-r {
+	border: 1px solid #333;
+	height: 38px;
+}
+#top-right button {
+	background: #FFF;
+	border: 0;
+	height: 38px;
+	width: 66px;
+}
+#top-right button:disabled {
+	background: #DDD;
 }
 
 #map {
@@ -61,9 +93,53 @@ select {
 	left: 0;
 	position: fixed;
 	right: 0;
-	top: 80px;
 }
 
 #map-inner {
 	height: 100%;
+}
+
+
+/*****************************************************************************/
+/* Queries
+/*****************************************************************************/
+@media (orientation: portrait) {
+	#top {
+		height: 140px;
+	}
+	
+	#top-left,
+	#top-right {
+		margin: 20px;
+		overflow: hidden;
+	}
+	
+	#map {
+		top: 140px;
+	}
+}
+
+@media (orientation: landscape) {
+	#top {
+		height: 80px;
+	}
+	
+	#top-left {
+		float: left;
+	}
+	
+	#top-right {
+		float: right;
+	}
+	
+	#top-left,
+	#top-right {
+		box-sizing: border-box;
+		padding: 20px;
+		width: 50%;
+	}
+	
+	#map {
+		top: 80px;
+	}
 }
