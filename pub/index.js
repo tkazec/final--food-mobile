@@ -159,6 +159,8 @@ GMaps.geolocate({
 		Search.latlon = [pos.coords.latitude, pos.coords.longitude];
 		Data.load();
 		Map.setCenter(pos.coords.latitude, pos.coords.longitude);
+		
+		document.getElementById("top-address").placeholder = "current location";
 	},
 	error: function () {}
 });
