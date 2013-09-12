@@ -64,11 +64,11 @@ Data.show = function () {
 		}());
 		
 		info.appendChild(function () {
-			var elem = document.createElement("div");
+			var elem = document.createElement("ul");
 			[v.type].concat(v.labels).forEach(function (l) {
-				var span = document.createElement("span");
-				span.textContent = l;
-				elem.appendChild(span);
+				var li = document.createElement("li");
+				li.textContent = l;
+				elem.appendChild(li);
 			});
 			return elem;
 		}());
@@ -109,6 +109,12 @@ Data.show = function () {
 document.getElementById("top-text").addEventListener("change", function () {
 	Search.text = this.value;
 	Data.load();
+}, false);
+document.getElementById("top-text").addEventListener("focus", function () {
+	this.placeholder = "e.g. coffee, tacos, ice cream, etc.";
+}, false);
+document.getElementById("top-text").addEventListener("blur", function () {
+	this.placeholder = "everything";
 }, false);
 
 document.getElementById("top-type").addEventListener("change", function () {

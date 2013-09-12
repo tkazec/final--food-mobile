@@ -76,13 +76,15 @@ body {
 	margin: 10px 0;
 }
 
-.map-info > div {
+.map-info > ul {
+	margin: 0;
+	padding: 0;
 	text-align: justify;
 }
-.map-info > div > span {
-	background: #999;
+.map-info > ul > li {
+	background: #EEE;
 	border-radius: 3px;
-	color: #FFF;
+	color: #555;
 	display: inline-block;
 	font-size: 12px;
 	line-height: 12px;
