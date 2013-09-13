@@ -1,6 +1,10 @@
 /*****************************************************************************/
 /* Elements
 /*****************************************************************************/
+html {
+	font-size: 10px;
+}
+
 body {
 	margin: 0;
 }
@@ -8,6 +12,7 @@ body {
 #top input {
 	border: 0;
 	border-bottom: 1px dotted;
+	border-radius: 0;
 	padding: 0;
 	width: 100%;
 }
@@ -21,8 +26,10 @@ body {
 #top select {
 	border-color: #333;
 	box-sizing: border-box;
-	font-size: 20px;
-	height: 40px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-size: 2rem;
+	height: 4rem;
 	vertical-align: top;
 }
 
@@ -49,31 +56,33 @@ body {
 
 .top-col-m {
 	box-sizing: border-box;
-	padding: 0 220px 0 80px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0 22rem 0 8rem;
 	width: 100%;
 }
 
 .top-col-r {
-	margin-left: -200px;
+	margin-left: -20rem;
 }
 
 .map-info {
 	color: #333;
-	width: 240px;
+	width: 24rem;
 }
 
 .map-info > h1 {
-	font-size: 16px;
+	font-size: 1.6rem;
 	font-weight: 400;
-	line-height: 16px;
-	margin: 0 0 5px 0;
+	line-height: 1.6rem;
+	margin: 0 0 0.5rem 0;
 }
 
 .map-info > address {
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-style: italic;
-	line-height: 14px;
-	margin: 10px 0;
+	line-height: 1.4rem;
+	margin: 1rem 0;
 }
 
 .map-info > ul {
@@ -86,8 +95,8 @@ body {
 	border-radius: 3px;
 	color: #555;
 	display: inline-block;
-	font-size: 12px;
-	line-height: 12px;
+	font-size: 1.2rem;
+	line-height: 1.2rem;
 	margin: 1px;
 	padding: 3px;
 }
@@ -95,9 +104,9 @@ body {
 .map-info > a {
 	color: #0060FF;
 	display: inline-block;
-	font-size: 14px;
-	line-height: 14px;
-	margin-top: 10px;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	margin-top: 1rem;
 	text-align: center;
 	text-decoration: none;
 	width: 50%;
@@ -112,27 +121,28 @@ body {
 /*****************************************************************************/
 #top {
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.333);
-	font-size: 30px;
-	line-height: 40px;
+	font-size: 3rem;
+	line-height: 4rem;
 	position: fixed;
 	width: 100%;
 	z-index: 1;
 }
 
 #top-left select {
-	width: 200px;
+	width: 20rem;
 }
 
 #top-right .top-col-r {
-	border: 1px solid #333;
-	height: 38px;
+	border: 0.1rem solid #333;
+	height: 3.8rem;
 }
 #top-right button {
 	background: #FFF;
 	border: 0;
 	cursor: pointer;
-	height: 38px;
-	width: 66px;
+	height: 3.8rem;
+	padding: 0;
+	width: 6.6rem;
 }
 #top-right button:hover {
 	background: #EEE;
@@ -156,25 +166,31 @@ body {
 /*****************************************************************************/
 /* Queries
 /*****************************************************************************/
+@media (max-device-width: 767px) {
+	html {
+		font-size: 5px;
+	}
+}
+
 @media (orientation: portrait) {
 	#top {
-		height: 140px;
+		height: 14rem;
 	}
 	
 	#top-left,
 	#top-right {
-		margin: 20px;
+		margin: 2rem;
 		overflow: hidden;
 	}
 	
 	#map {
-		top: 140px;
+		top: 14rem;
 	}
 }
 
 @media (orientation: landscape) {
 	#top {
-		height: 80px;
+		height: 8rem;
 	}
 	
 	#top-left {
@@ -188,11 +204,13 @@ body {
 	#top-left,
 	#top-right {
 		box-sizing: border-box;
-		padding: 20px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		padding: 2rem;
 		width: 50%;
 	}
 	
 	#map {
-		top: 80px;
+		top: 8rem;
 	}
 }
