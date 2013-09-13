@@ -32,11 +32,11 @@ Decisions...
 * Database? Normally, I would use something like Redis or MongoDB (or both). Redis would be nice for simple, performant persistence. MongoDB would be nice for full persistence, powerful queries, and features such as geospatial indexing. In this case however, the dataset is relatively small, doesn't need to be persisted, and isn't hard to query. A database would be overkill.
 * Statics? I'm directly loading and dumping the CSS and JS into the HTML. Only acceptable here because it will only ever be a single page app, simplifying the server and reducing HTTP requests. In almost any other circumstance though, a static file server and maybe an asset builder should be used.
 * Bootstrap? I'm not a fan of its size, given the amount it'd be used here. I wanted a more customized style anyway.
-* jQuery? Similar to Boostrap, it's just so large and wouldn't be very useful in this case. Native DOM works well.
+* jQuery? Similar to Bootstrap, it's just so large and wouldn't be very useful in this case. Native DOM works well.
 
-In general, I mostly used my favorite tools here. Node running is Express with Jade is hard to beat. [Cron](https://npmjs.org/package/cron) is fairly standard. And while [request](https://npmjs.org/package/request) is currently only used in one place, it's so applicable it'd be weird to leave out.
+In general, I mostly used my favorite tools here. Node running Express with Jade is hard to beat. [Cron](https://npmjs.org/package/cron) is fairly standard. And while [request](https://npmjs.org/package/request) is currently only used in one place, it's so applicable it'd be weird to leave out.
 
-What I did not have experience with was Google Maps or any of its related APIs and wrapper libraries. I ended up choosing one that looked good off of [cdnjs](http://cdnjs.com), and it worked out well.
+What I did not have experience with was Google Maps or any of its related APIs and wrapper libraries. I ended up choosing [gmaps.js](http://hpneo.github.io/gmaps/) off of [cdnjs](http://cdnjs.com), and it worked out well.
 
 Future improvements could include realtime vendor integrations, better text search, better label merging (maybe using Levenshtein distance), autocomplete for searching, mobile icons, an informational section, and in-depth error handling and logging.
 
