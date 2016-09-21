@@ -3,7 +3,7 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-		title Food trucks in SF
+		title Food trucks in San Francisco
 		style !{css}
 	body
 		div#top
@@ -30,10 +30,10 @@ html(lang="en")
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 			
-			ga('create', '#{gaid}', 'tkaz.ec');
+			ga('create', '#{gaid}', 'auto');
 			ga('send', 'pageview');
-		script(src="http://maps.google.com/maps/api/js?sensor=true")
-		script(src="http://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.5/gmaps.min.js")
+		script(src="https://maps.google.com/maps/api/js?#{gmap}")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.min.js")
 		script var Labels = !{JSON.stringify(labels)}; !{js}

@@ -1,26 +1,27 @@
-Food trucks in SF. http://food-mobile.tkaz.ec
+Food trucks in San Francisco. https://food-mobile.teddy.io
 
 ---
 
 Getting started:
 
-	$ git clone https://github.com/tkazec/food-mobile
+	$ git clone https://github.com/tkazec/final--food-mobile.git
 	$ npm install
-	$ node .
+	$ npm start
 
 Environment variables:
 
 * `NODE_ENV`: Node environment to use. Set to `production` for extra caching.
 * `PORT`: Port to listen on. Defaults to `5000`.
 * `GAID`: Google Analytics account to track.
+* `GMAP`: Google Maps parameters.
 
 ---
 
 What's food-mobile?
 
-A complete, production-ready web app I created as a demo in about twelve hours. The basic concept is similar to Yelp for food trucks in SF. It's highly optimized for an excellent experience with every device and situation—finding food *now*, or just planning that Monday night excursion to Willow Market.
+A complete, production-ready web app I created as a demo in about twelve hours. The basic concept is similar to Yelp for food trucks in San Francisco. It's highly optimized for an excellent experience with every device and situation—finding food *now*, or just planning that Monday night excursion to Willow Market.
 
-Built with [Node](http://nodejs.org) running [Express](http://expressjs.com), the server pulls from [DataSF](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat), analyzes metadata such as labels, and then serves it to the client via the API endpoint. Rendered by [Jade](http://jade-lang.com), the client uses Google Maps with a wrapper library, and some styles and scripts to glue it all together. Taking advantage of some of the latest HTML5 features such as geolocation, it performs well on every recent major browser and platform.
+Built with [Node](https://nodejs.org) running [Express](https://expressjs.com), the server pulls from [DataSF](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat), analyzes metadata such as labels, and then serves it to the client via the API endpoint. Rendered by [Jade](https://pugjs.org), the client uses Google Maps with a wrapper library, and some styles and scripts to glue it all together. Taking advantage of some of the latest HTML5 features such as geolocation, it performs well on every recent major browser and platform.
 
 My production instance is running on Heroku, for simplicity and scalability.
 
@@ -36,7 +37,7 @@ Decisions...
 
 In general, I mostly used my favorite tools here. Node running Express with Jade is hard to beat. [Cron](https://npmjs.org/package/cron) is fairly standard. And while [request](https://npmjs.org/package/request) is currently only used in one place, it's so applicable it'd be weird to leave out.
 
-What I did not have experience with was Google Maps or any of its related APIs and wrapper libraries. I ended up choosing [gmaps.js](http://hpneo.github.io/gmaps/) off of [cdnjs](http://cdnjs.com), and it worked out well.
+What I did not have experience with was Google Maps or any of its related APIs and wrapper libraries. I ended up choosing [gmaps.js](https://hpneo.github.io/gmaps/) off of [cdnjs](https://cdnjs.com), and it worked out well.
 
 Future improvements could include realtime vendor integrations, better text search, better label merging (maybe using Levenshtein distance), autocomplete for searching, mobile icons, an informational section, and in-depth error handling and logging.
 

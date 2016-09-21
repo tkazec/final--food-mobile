@@ -1,6 +1,9 @@
 {
-	"name": "ec.tkaz.food-mobile",
+	"name": "food-mobile",
 	"version": "0.0.0",
+	"scripts": {
+		"start": "node index"
+	},
 	"dependencies": {
 		"cron": "~1.0.1",
 		"express": "~3.4.0",
@@ -8,8 +11,7 @@
 		"request": "~2.27.0"
 	},
 	"engines": {
-		"node": "~0.10.17",
-		"npm": "~1.3.8"
+		"node": "~0.10.17"
 	},
 	"private": true
 }

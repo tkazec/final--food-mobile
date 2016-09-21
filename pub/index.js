@@ -104,7 +104,7 @@ Data.show = function () {
 		// Add the Yelp link.
 		info.appendChild(function () {
 			var elem = document.createElement("a");
-			elem.href = "http://www.yelp.com/search?find_desc=" + window.encodeURIComponent(v.name);
+			elem.href = "https://www.yelp.com/search?find_desc=" + window.encodeURIComponent(v.name);
 			elem.target = "_blank";
 			elem.textContent = "Search Yelp";
 			return elem;
