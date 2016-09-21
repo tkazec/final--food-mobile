@@ -1,3 +1,5 @@
+> I originally created food[-mobile](https://en.wiktionary.org/wiki/-mobile) in September 2013 for [Uber](https://www.uber.com)'s technical interview coding challenge. The final source code is preserved here, dedicated to the public domain under the [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/). – [Teddy Cross](https://teddy.io)
+
 Food trucks in San Francisco. https://food-mobile.teddy.io
 
 ---
@@ -40,13 +42,3 @@ In general, I mostly used my favorite tools here. Node running Express with Jade
 What I did not have experience with was Google Maps or any of its related APIs and wrapper libraries. I ended up choosing [gmaps.js](https://hpneo.github.io/gmaps/) off of [cdnjs](https://cdnjs.com), and it worked out well.
 
 Future improvements could include realtime vendor integrations, better text search, better label merging (maybe using Levenshtein distance), autocomplete for searching, mobile icons, an informational section, and in-depth error handling and logging.
-
----
-
-About me:
-
-I’m a full stack web engineer who has dabbled in games. Previously an intern at [Game Closure](http://www.gameclosure.com), I’m now pioneering time-based search at [SpotOn](https://spoton.it). I have experience with and enjoy most things involving web technologies, with a passion for the latest and greatest. Check out my [portfolio](http://tkaz.ec/about.html)!
-
----
-
-© 2013 [Teddy Cross](http://tkaz.ec), shared under the [MIT License](http://www.opensource.org/licenses/MIT).
